@@ -1,3 +1,7 @@
+// 0 = water
+// 1 = ship
+// 2 = hit
+// 3 = miss
 let boards = [
     [ // Board 1
       [0,1,1,0,0,0,0,0,0,0],
