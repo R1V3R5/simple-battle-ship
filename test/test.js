@@ -13,10 +13,20 @@ const assert = chai.assert;
 // Test our Game Class
 describe('About our Game', () => {
 
+  let game;
+  beforeEach(() => {
+    game = new Game();
+  });
+
   describe('Creation of our Game', () => {
     it('should be an instance of Game', () => {
-      let g = new Game();
-      expect(g).to.be.an.instanceof(Game);
+      expect(game).to.be.an.instanceof(Game);
+    });
+  });
+
+  describe('Our Game Squares', () => {
+    it('should have an array of squares', () => {
+      expect(game.squares).is.an('array');
     });
   });
 
