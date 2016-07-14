@@ -3,6 +3,7 @@ import chai from 'chai';
 
 // Import Any Files to Test
 import { Game } from '../src/js/classes/game';
+import { Square } from '../src/js/classes/square';
 
 // Set Chai Constants
 const expect = chai.expect;
@@ -55,3 +56,39 @@ describe('About our Game', () => {
 // 1 = ship
 // 2 = hit
 // 3 = miss
+
+describe('About our squares', () => {
+
+  let square;
+  beforeEach(() => {
+    square = new Square('s1', 1);
+  });
+
+  describe('Creating squares', () => {
+    it('should be an instance of Square', () => {
+      expect(square).to.be.an.instanceof(Square);
+    });
+  });
+
+  describe('All the Squares properties', () => {
+    it('should have an id', () => {
+      expect(square.id).to.be.a('string');
+    });
+    it('should have an initial state', () => {
+      expect(square.state).to.be.a('number');
+    });
+  });
+
+  describe('Ability to make hits & misses', () => {
+    it('should change state to a hit', () => {
+      square.guess();
+      expect(square.state).to.equal(2);
+    });
+    it('should change state to a miss', () => {
+      let square2 = new Square('s2', 0);
+      square2.guess();
+      expect(square2.state).to.equal(3);
+    });
+  });
+
+});

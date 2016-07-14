@@ -1,0 +1,47 @@
+@import "bulma";
+
+* { box-sizing: border-box; }
+
+.navbar {
+  width: 500px;
+  margin: 25px auto 0 auto;
+  p.title {
+    font-size: 15px;
+    .hits, .misses {
+      font-size: 30px;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.container {
+  width: 506px;
+  height: 506px;
+  border: 3px solid black;
+  margin: 25px auto;
+
+
+  .square {
+    cursor: crosshair;
+    width: 50px;
+    height: 50px;
+    float: left;
+    border: 1px solid rgba(38, 50, 56, 1);
+    background-color: rgba(134, 221, 255, 1);
+    
+    &.hit { background-color: rgba(243, 114, 99, 1); }
+    &.miss { background-color: rgba(38, 50, 56, 1); }
+  }
+
+}
+
+.info {
+  width: 500px;
+  margin: 0 auto;
+  font-style: italic;
+  font-size: 13px;
+}
